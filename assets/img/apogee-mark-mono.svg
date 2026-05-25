@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 110" width="500" height="550">
+  <title>APOGEE PM</title>
+  <path fill="#061a35" fill-rule="evenodd" d="M 12,94 L 50,12 L 88,94 L 70,94 L 56,56 L 44,56 L 30,94 Z M 44,56 L 50,30 L 56,56 Z"></path>
+  <rect x="8" y="90" width="26" height="5" fill="#061a35"></rect>
+  <rect x="66" y="90" width="26" height="5" fill="#061a35"></rect>
+  <rect x="23" y="50" width="54" height="6" fill="#061a35"></rect>
+  <rect x="27" y="45.5" width="46" height="1.6" fill="#061a35"></rect>
+</svg>
