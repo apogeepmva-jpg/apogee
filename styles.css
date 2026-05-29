@@ -317,6 +317,22 @@ h1 em {
   margin-top: 24px;
 }
 
+.services-grid-2 {
+  grid-template-columns: repeat(2, 1fr);
+  max-width: 880px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.card-meta {
+  font-size: 13px;
+  letter-spacing: .04em;
+  color: var(--gold);
+  margin: -2px 0 6px;
+  font-weight: 500;
+  min-height: 0 !important;
+}
+
 .service-card {
   min-height: 260px;
   padding: 28px 28px 24px;

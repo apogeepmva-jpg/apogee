@@ -1,6 +1,7 @@
 CLAUDE.md
 *.zip
 logodrafts/
+client-assets/
 .DS_Store
 Thumbs.db
 desktop.ini
