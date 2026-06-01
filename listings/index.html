@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Available Properties | APOGEE PM</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/img/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../assets/img/favicon-16.png">
+  <link rel="apple-touch-icon" href="../assets/img/apple-touch-icon.png">
+  <link rel="canonical" href="https://apogeepmllc.com/listings/">
+  <link rel="stylesheet" href="../tokens.css">
+  <link rel="stylesheet" href="../styles.css">
+  <style>
+    /* ── Page hero ─────────────────────────────────────── */
+    .page-hero {
+      background: var(--navy);
+      color: var(--paper);
+      padding: 2.8rem 0 2.4rem;
+      text-align: center;
+    }
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: .35rem;
+      font-size: 12px;
+      font-family: var(--font-sans);
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      color: var(--gold-lt);
+      text-decoration: none;
+      margin-bottom: 1rem;
+      opacity: .8;
+    }
+    .back-link:hover { opacity: 1; }
+    .page-hero h1 {
+      font-size: clamp(1.8rem, 3.5vw, 2.4rem);
+      color: var(--paper);
+      margin-bottom: .4rem;
+    }
+    .page-hero .sub {
+      color: rgba(251,248,242,.6);
+      font-size: .9rem;
+      font-family: var(--font-sans);
+    }
+
+    /* ── Listing sections ──────────────────────────────── */
+    .listing-section {
+      padding: 3.5rem 0;
+      background: var(--paper);
+    }
+    .listing-section + .listing-section {
+      border-top: 1px solid rgba(6,26,53,.1);
+    }
+    .section-label {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+    .section-label span {
+      font-size: 11px;
+      font-family: var(--font-sans);
+      font-weight: 700;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--navy);
+      white-space: nowrap;
+    }
+    .section-label::after {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(to right, var(--gold), transparent);
+      opacity: .5;
+    }
+
+    /* ── Card ──────────────────────────────────────────── */
+    .listing-card {
+      background: #fff;
+      border: 1px solid rgba(6,26,53,.1);
+      border-radius: 3px;
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 56% 44%;
+      box-shadow: 0 2px 16px rgba(6,26,53,.06);
+    }
+    @media (max-width: 760px) {
+      .listing-card { grid-template-columns: 1fr; }
+    }
+
+    /* ── Photo panel ───────────────────────────────────── */
+    .listing-media { display: flex; flex-direction: column; }
+    .listing-hero-img {
+      width: 100%;
+      aspect-ratio: 4/3;
+      object-fit: cover;
+      display: block;
+    }
+    .listing-thumbs {
+      display: flex;
+      gap: 2px;
+      background: var(--navy);
+      padding: 2px;
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+    .listing-thumbs::-webkit-scrollbar { display: none; }
+    .listing-thumbs img {
+      width: 78px;
+      height: 56px;
+      object-fit: cover;
+      flex-shrink: 0;
+      opacity: .75;
+      transition: opacity .2s;
+    }
+    .listing-thumbs img:hover { opacity: 1; }
+
+    /* ── Details panel ─────────────────────────────────── */
+    .listing-details {
+      padding: 2rem 1.75rem;
+      display: flex;
+      flex-direction: column;
+      gap: .9rem;
+    }
+    .listing-title-row {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: .8rem;
+    }
+    .listing-title-row h3 {
+      font-size: 1.25rem;
+      color: var(--navy);
+      line-height: 1.2;
+      margin: 0;
+    }
+    .badge {
+      font-size: 10px;
+      font-family: var(--font-sans);
+      font-weight: 700;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      padding: .25rem .6rem;
+      border-radius: 2px;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+    .badge-available { background: var(--gold); color: #fff; }
+    .badge-soon { border: 1.5px solid var(--navy); color: var(--navy); }
+    .listing-address {
+      font-size: .88rem;
+      color: rgba(6,26,53,.55);
+      line-height: 1.55;
+      margin: 0;
+    }
+    .listing-price {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--gold);
+      font-family: var(--font-sans);
+      margin: 0;
+    }
+
+    /* ── Spec chips ────────────────────────────────────── */
+    .listing-specs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .4rem;
+    }
+    .spec-chip {
+      font-size: 11px;
+      font-family: var(--font-sans);
+      padding: .22rem .6rem;
+      border: 1px solid rgba(183,121,36,.4);
+      border-radius: 20px;
+      color: var(--navy);
+      background: rgba(213,154,52,.05);
+    }
+
+    /* ── Feature list ──────────────────────────────────── */
+    .listing-features {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: .38rem;
+    }
+    .listing-features li {
+      font-size: .86rem;
+      color: rgba(6,26,53,.7);
+      padding-left: 1.1rem;
+      position: relative;
+    }
+    .listing-features li::before {
+      content: "✦";
+      font-size: 7px;
+      color: var(--gold);
+      position: absolute;
+      left: 0;
+      top: .3rem;
+    }
+
+    /* ── Card CTAs ─────────────────────────────────────── */
+    .listing-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .7rem;
+      margin-top: auto;
+      padding-top: .4rem;
+    }
+    .listing-actions .button {
+      flex: 1;
+      min-width: 110px;
+      text-align: center;
+      font-size: .88rem;
+      padding: .65rem 1rem;
+    }
+
+    /* ── Bottom CTA band ───────────────────────────────── */
+    .listings-footer-cta {
+      background: var(--navy);
+      padding: 3.2rem 0;
+      text-align: center;
+    }
+    .listings-footer-cta h2 {
+      color: var(--paper);
+      font-size: 1.55rem;
+      margin-bottom: .55rem;
+    }
+    .listings-footer-cta p {
+      color: rgba(251,248,242,.65);
+      font-size: .92rem;
+      margin-bottom: 1.6rem;
+    }
+    .listings-footer-cta .cta-row {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+
+    <header class="site-header">
+      <div class="shell nav">
+        <a class="brand" href="/" aria-label="APOGEE PM home">
+          <img class="brand-mark" src="../assets/img/apogee-mark.svg" alt="" aria-hidden="true" width="46" height="50">
+          <span>
+            <span class="brand-word">APOGEE PM</span>
+            <span class="brand-kicker">Property Management</span>
+          </span>
+        </a>
+        <nav class="nav-links" aria-label="Primary navigation">
+          <a href="/listings/" aria-current="page">Listings</a>
+          <a href="/#why">Why Us</a>
+          <a href="/#areas">Areas We Serve</a>
+          <a href="/#about">About</a>
+          <a href="/#contact">Contact</a>
+          <a href="/zh/" hreflang="zh-CN" lang="zh-CN">中文</a>
+          <a class="button button-dark" href="/tour/">Schedule a Tour</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+
+      <!-- Page title -->
+      <section class="page-hero">
+        <div class="shell">
+          <a class="back-link" href="/">← APOGEE PM</a>
+          <h1>Available Properties</h1>
+          <p class="sub">Sterling, Virginia · DMV Region</p>
+        </div>
+      </section>
+
+      <!-- ─ Office Space ───────────────────────────────── -->
+      <section class="listing-section" id="office">
+        <div class="shell">
+
+          <div class="section-label">
+            <span>Office Space</span>
+          </div>
+
+          <div class="listing-card">
+            <div class="listing-media">
+              <img class="listing-hero-img"
+                   src="../assets/img/listings/office/building-exterior.jpg"
+                   alt="21165 Whitfield Place — professional office building exterior">
+              <div class="listing-thumbs">
+                <img src="../assets/img/listings/office/conference-room.jpg"   alt="Conference room">
+                <img src="../assets/img/listings/office/hallway.jpg"           alt="Hallway with shared TV">
+                <img src="../assets/img/listings/office/office-window.jpg"     alt="Private office with window">
+                <img src="../assets/img/listings/office/office-private.jpg"    alt="Private office">
+                <img src="../assets/img/listings/office/entrance.jpg"          alt="Building entrance">
+              </div>
+            </div>
+
+            <div class="listing-details">
+              <div class="listing-title-row">
+                <h3>Office Suite 207</h3>
+                <span class="badge badge-available">Available</span>
+              </div>
+
+              <p class="listing-address">
+                21165 Whitfield Pl, Ste 207<br>
+                Sterling, VA 20165
+              </p>
+
+              <p class="listing-price">Contact for Pricing</p>
+
+              <div class="listing-specs">
+                <span class="spec-chip">Private Offices</span>
+                <span class="spec-chip">Conference Room</span>
+                <span class="spec-chip">Free Parking</span>
+                <span class="spec-chip">Professional Address</span>
+                <span class="spec-chip">Multiple Units</span>
+              </div>
+
+              <ul class="listing-features">
+                <li>Multiple private office configurations available</li>
+                <li>Shared conference room with presentation TV</li>
+                <li>Dedicated surface parking, no additional fee</li>
+                <li>Professional business mailing address</li>
+                <li>Flexible lease terms — short and long-term</li>
+                <li>Personally managed, responsive landlord</li>
+              </ul>
+
+              <div class="listing-actions">
+                <a class="button button-dark" href="/tour/">Schedule a Tour</a>
+                <a class="button" href="mailto:info@apogeepmllc.com">Ask a Question</a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ─ Residential ────────────────────────────────── -->
+      <section class="listing-section" id="townhouse">
+        <div class="shell">
+
+          <div class="section-label">
+            <span>Residential</span>
+          </div>
+
+          <div class="listing-card">
+            <div class="listing-media">
+              <img class="listing-hero-img"
+                   src="../assets/img/listings/townhouse/exterior.jpg"
+                   alt="232 Willow Terrace — townhouse exterior">
+              <div class="listing-thumbs">
+                <img src="../assets/img/listings/townhouse/living-room.jpg"    alt="Living room">
+                <img src="../assets/img/listings/townhouse/kitchen.jpg"        alt="Kitchen">
+                <img src="../assets/img/listings/townhouse/master-bedroom.jpg" alt="Master bedroom">
+                <img src="../assets/img/listings/townhouse/backyard.jpg"       alt="Backyard">
+                <img src="../assets/img/listings/townhouse/pool.jpg"           alt="Community pool">
+              </div>
+            </div>
+
+            <div class="listing-details">
+              <div class="listing-title-row">
+                <h3>Townhouse at Willow Ter</h3>
+                <span class="badge badge-soon">Available Soon</span>
+              </div>
+
+              <p class="listing-address">
+                232 Willow Terrace<br>
+                Sterling, VA 20165
+              </p>
+
+              <p class="listing-price">Contact for Pricing</p>
+
+              <div class="listing-specs">
+                <span class="spec-chip">3 Bedrooms</span>
+                <span class="spec-chip">2.5 Bathrooms</span>
+                <span class="spec-chip">Backyard &amp; Deck</span>
+                <span class="spec-chip">Community Pool</span>
+                <span class="spec-chip">In-Unit W/D</span>
+              </div>
+
+              <ul class="listing-features">
+                <li>3 bedrooms including master suite with walk-in closet</li>
+                <li>2.5 bathrooms — master bath with shower</li>
+                <li>Open-plan kitchen, dining, and family room</li>
+                <li>Private backyard with deck</li>
+                <li>Community pool, playground, and lake access</li>
+                <li>In-unit washer and dryer included</li>
+              </ul>
+
+              <div class="listing-actions">
+                <a class="button button-dark" href="/tour/">Schedule a Tour</a>
+                <a class="button" href="mailto:info@apogeepmllc.com">Ask a Question</a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ─ Bottom CTA ─────────────────────────────────── -->
+      <section class="listings-footer-cta">
+        <div class="shell">
+          <h2>Ready to Take a Look?</h2>
+          <p>Schedule a personal tour of either property at your convenience.</p>
+          <div class="cta-row">
+            <a class="button button-gold" href="/tour/">Schedule a Tour</a>
+            <a class="button" href="/#contact">Contact Us</a>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <footer class="footer">
+      <div class="shell footer-grid">
+        <div>
+          <a class="brand" href="/" aria-label="APOGEE PM home">
+            <img class="brand-mark" src="../assets/img/apogee-mark.svg" alt="" aria-hidden="true" width="46" height="50">
+            <span>
+              <span class="brand-word">APOGEE PM</span>
+              <span class="brand-kicker">Property Management</span>
+            </span>
+          </a>
+          <p>Professional property management and real estate services across the DMV region.</p>
+          <div class="socials" aria-label="Social links">
+            <span>in</span><span>B</span><span>P</span>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <p class="footer-heading">Properties</p>
+          <ul class="footer-list">
+            <li><a href="/listings/#office">Office Space</a></li>
+            <li><a href="/listings/#townhouse">Residential Townhouse</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <p class="footer-heading">Company</p>
+          <ul class="footer-list">
+            <li><a href="/#about">About Us</a></li>
+            <li><a href="/#why">Why Apogee</a></li>
+            <li><a href="/#areas">Areas We Serve</a></li>
+            <li><a href="/#contact">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <p class="footer-heading">Contact</p>
+          <ul class="footer-list">
+            <li class="contact-line">
+              <span class="mini-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 6h16v12H4z"/><path d="m4 7 8 6 8-6"/></svg></span>
+              <a href="mailto:info@apogeepmllc.com">info@apogeepmllc.com</a>
+            </li>
+            <li class="contact-line">
+              <span class="mini-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.5 13 13 0 0 0 2.8.7 2 2 0 0 1 1.7 2.1Z"/></svg></span>
+              <a href="tel:+17033757170">(703) 375-7170</a>
+            </li>
+            <li class="contact-line">
+              <span class="mini-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 22s7-7.3 7-13A7 7 0 0 0 5 9c0 5.7 7 13 7 13Z"/><circle cx="12" cy="9" r="2.5"/></svg></span>
+              DMV Region
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="shell copyright">&copy; 2026 APOGEE PM LLC. All rights reserved.</div>
+    </footer>
+
+  </div>
+</body>
+</html>

@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Schedule a Tour | APOGEE PM</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/img/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../assets/img/favicon-16.png">
+  <link rel="apple-touch-icon" href="../assets/img/apple-touch-icon.png">
+  <link rel="canonical" href="https://apogeepmllc.com/tour/">
+  <link rel="stylesheet" href="../tokens.css">
+  <link rel="stylesheet" href="../styles.css">
+  <style>
+    /* ── Tour page ─────────────────────────────────────── */
+    .tour-hero {
+      background: var(--navy);
+      padding: 2.8rem 0 2.4rem;
+      text-align: center;
+    }
+    .tour-hero h1 {
+      font-size: clamp(1.8rem, 3.5vw, 2.4rem);
+      color: var(--paper);
+      margin-bottom: .4rem;
+    }
+    .tour-hero p {
+      color: rgba(251,248,242,.65);
+      font-size: .92rem;
+    }
+
+    .tour-body {
+      background: var(--paper);
+      padding: 4rem 0;
+    }
+    .tour-layout {
+      display: grid;
+      grid-template-columns: 1fr 1.5fr;
+      gap: 3.5rem;
+      align-items: start;
+    }
+    @media (max-width: 760px) {
+      .tour-layout { grid-template-columns: 1fr; gap: 2rem; }
+    }
+
+    /* ── Info panel ────────────────────────────────────── */
+    .tour-info h2 {
+      font-size: 1.4rem;
+      color: var(--navy);
+      margin-bottom: 1rem;
+    }
+    .tour-info p {
+      font-size: .92rem;
+      color: rgba(6,26,53,.7);
+      line-height: 1.7;
+      margin-bottom: 1.5rem;
+    }
+    .tour-contact-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: .75rem;
+    }
+    .tour-contact-list li {
+      display: flex;
+      align-items: center;
+      gap: .6rem;
+      font-size: .9rem;
+      color: var(--navy);
+    }
+    .tour-contact-list a {
+      color: var(--navy);
+      text-decoration: none;
+    }
+    .tour-contact-list a:hover { color: var(--gold); }
+    .tour-contact-list .mini-icon {
+      flex-shrink: 0;
+    }
+
+    .tour-properties {
+      margin-top: 2rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid rgba(6,26,53,.1);
+    }
+    .tour-properties h3 {
+      font-size: 11px;
+      font-family: var(--font-sans);
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--navy);
+      margin-bottom: 1rem;
+    }
+    .prop-summary {
+      display: flex;
+      flex-direction: column;
+      gap: .6rem;
+    }
+    .prop-item {
+      display: flex;
+      align-items: center;
+      gap: .75rem;
+      padding: .75rem;
+      background: #fff;
+      border: 1px solid rgba(6,26,53,.08);
+      border-radius: 3px;
+      font-size: .88rem;
+    }
+    .prop-item-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+    .dot-available { background: var(--gold); }
+    .dot-soon { background: rgba(6,26,53,.25); }
+    .prop-item strong {
+      color: var(--navy);
+      display: block;
+      font-size: .88rem;
+    }
+    .prop-item span {
+      color: rgba(6,26,53,.5);
+      font-size: .8rem;
+    }
+
+    /* ── Form panel ────────────────────────────────────── */
+    .tour-form-panel {
+      background: #fff;
+      border: 1px solid rgba(6,26,53,.1);
+      border-radius: 3px;
+      padding: 2.2rem 2rem;
+      box-shadow: 0 2px 16px rgba(6,26,53,.06);
+    }
+    .tour-form-panel h3 {
+      font-size: 1.2rem;
+      color: var(--navy);
+      margin-bottom: 1.75rem;
+    }
+    /* form note */
+    .form-note {
+      font-size: .82rem;
+      color: rgba(6,26,53,.5);
+      text-align: center;
+      margin-top: .75rem;
+      font-family: var(--font-sans);
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+
+    <header class="site-header">
+      <div class="shell nav">
+        <a class="brand" href="/" aria-label="APOGEE PM home">
+          <img class="brand-mark" src="../assets/img/apogee-mark.svg" alt="" aria-hidden="true" width="46" height="50">
+          <span>
+            <span class="brand-word">APOGEE PM</span>
+            <span class="brand-kicker">Property Management</span>
+          </span>
+        </a>
+        <nav class="nav-links" aria-label="Primary navigation">
+          <a href="/listings/">Listings</a>
+          <a href="/#why">Why Us</a>
+          <a href="/#areas">Areas We Serve</a>
+          <a href="/#about">About</a>
+          <a href="/#contact">Contact</a>
+          <a href="/zh/" hreflang="zh-CN" lang="zh-CN">中文</a>
+          <a class="button button-dark" href="/tour/" aria-current="page">Schedule a Tour</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+
+      <section class="tour-hero">
+        <div class="shell">
+          <a class="back-link" href="/listings/">← Available Properties</a>
+          <h1>Schedule a Tour</h1>
+          <p>We'll be in touch within one business day to confirm your visit.</p>
+        </div>
+      </section>
+
+      <section class="tour-body">
+        <div class="shell">
+          <div class="tour-layout">
+
+            <!-- Info panel -->
+            <aside class="tour-info">
+              <h2>Visit Us in Person</h2>
+              <p>Tours are available by appointment. Fill out the form and we'll reach out to confirm a time that works for you.</p>
+
+              <ul class="tour-contact-list">
+                <li>
+                  <span class="mini-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.5 13 13 0 0 0 2.8.7 2 2 0 0 1 1.7 2.1Z"/></svg></span>
+                  <a href="tel:+17033757170">(703) 375-7170</a>
+                </li>
+                <li>
+                  <span class="mini-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16"><path d="M4 6h16v12H4z"/><path d="m4 7 8 6 8-6"/></svg></span>
+                  <a href="mailto:info@apogeepmllc.com">info@apogeepmllc.com</a>
+                </li>
+                <li>
+                  <span class="mini-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16"><path d="M12 22s7-7.3 7-13A7 7 0 0 0 5 9c0 5.7 7 13 7 13Z"/><circle cx="12" cy="9" r="2.5"/></svg></span>
+                  Sterling, VA · DMV Region
+                </li>
+              </ul>
+
+              <div class="tour-properties">
+                <h3>Current Listings</h3>
+                <div class="prop-summary">
+                  <div class="prop-item">
+                    <div class="prop-item-dot dot-available"></div>
+                    <div>
+                      <strong>Office Suite 207</strong>
+                      <span>21165 Whitfield Pl, Sterling, VA</span>
+                    </div>
+                  </div>
+                  <div class="prop-item">
+                    <div class="prop-item-dot dot-soon"></div>
+                    <div>
+                      <strong>Townhouse at Willow Ter</strong>
+                      <span>232 Willow Terrace, Sterling, VA</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </aside>
+
+            <!-- Form panel -->
+            <!-- TODO: Replace action with Formspree endpoint once set up.
+                 1. Go to formspree.io and create a free account
+                 2. Create a new form, set notification email to info@apogeepmllc.com
+                 3. Replace action="#" with the provided endpoint URL
+                 4. Remove enctype attribute below -->
+            <div class="tour-form-panel">
+              <h3>Request a Tour</h3>
+              <form class="contact-form" action="mailto:info@apogeepmllc.com" method="post" enctype="text/plain">
+
+                <div class="form-row">
+                  <div class="field">
+                    <label for="name">Full Name <span aria-hidden="true">*</span></label>
+                    <input id="name" name="name" type="text" placeholder="Your name" required>
+                  </div>
+                  <div class="field">
+                    <label for="phone">Phone</label>
+                    <input id="phone" name="phone" type="tel" placeholder="(703) 000-0000">
+                  </div>
+                </div>
+
+                <div class="field">
+                  <label for="email">Email <span aria-hidden="true">*</span></label>
+                  <input id="email" name="email" type="email" placeholder="you@example.com" required>
+                </div>
+
+                <div class="field">
+                  <label for="property">Property I'm Interested In</label>
+                  <select id="property" name="property">
+                    <option value="">-- Select a property --</option>
+                    <option value="office-207">Office Suite 207 — 21165 Whitfield Pl</option>
+                    <option value="townhouse-232">Townhouse — 232 Willow Terrace</option>
+                    <option value="both">Both properties</option>
+                    <option value="general">General inquiry</option>
+                  </select>
+                </div>
+
+                <div class="form-row">
+                  <div class="field">
+                    <label for="date">Preferred Date</label>
+                    <input id="date" name="preferred_date" type="date">
+                  </div>
+                  <div class="field">
+                    <label for="time">Preferred Time</label>
+                    <select id="time" name="preferred_time">
+                      <option value="">-- Any time --</option>
+                      <option value="morning">Morning (9am – 12pm)</option>
+                      <option value="afternoon">Afternoon (12pm – 5pm)</option>
+                      <option value="evening">Evening (5pm – 7pm)</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="field">
+                  <label for="message">Additional Notes</label>
+                  <textarea id="message" name="message" rows="3" placeholder="Any questions or specific requirements…"></textarea>
+                </div>
+
+                <div class="form-actions">
+                  <button class="button button-dark button-full" type="submit">Request a Tour</button>
+                </div>
+              </form>
+              <p class="form-note">We respond within one business day.</p>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <footer class="footer">
+      <div class="shell footer-grid">
+        <div>
+          <a class="brand" href="/" aria-label="APOGEE PM home">
+            <img class="brand-mark" src="../assets/img/apogee-mark.svg" alt="" aria-hidden="true" width="46" height="50">
+            <span>
+              <span class="brand-word">APOGEE PM</span>
+              <span class="brand-kicker">Property Management</span>
+            </span>
+          </a>
+          <p>Professional property management and real estate services across the DMV region.</p>
+          <div class="socials" aria-label="Social links">
+            <span>in</span><span>B</span><span>P</span>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <p class="footer-heading">Properties</p>
+          <ul class="footer-list">
+            <li><a href="/listings/#office">Office Space</a></li>
+            <li><a href="/listings/#townhouse">Residential Townhouse</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <p class="footer-heading">Company</p>
+          <ul class="footer-list">
+            <li><a href="/#about">About Us</a></li>
+            <li><a href="/#why">Why Apogee</a></li>
+            <li><a href="/#areas">Areas We Serve</a></li>
+            <li><a href="/#contact">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <p class="footer-heading">Contact</p>
+          <ul class="footer-list">
+            <li class="contact-line">
+              <span class="mini-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 6h16v12H4z"/><path d="m4 7 8 6 8-6"/></svg></span>
+              <a href="mailto:info@apogeepmllc.com">info@apogeepmllc.com</a>
+            </li>
+            <li class="contact-line">
+              <span class="mini-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.5 13 13 0 0 0 2.8.7 2 2 0 0 1 1.7 2.1Z"/></svg></span>
+              <a href="tel:+17033757170">(703) 375-7170</a>
+            </li>
+            <li class="contact-line">
+              <span class="mini-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 22s7-7.3 7-13A7 7 0 0 0 5 9c0 5.7 7 13 7 13Z"/><circle cx="12" cy="9" r="2.5"/></svg></span>
+              DMV Region
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="shell copyright">&copy; 2026 APOGEE PM LLC. All rights reserved.</div>
+    </footer>
+
+  </div>
+</body>
+</html>
