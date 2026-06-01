@@ -26,6 +26,10 @@
           </span>
         </a>
 
+        <button class="nav-toggle" aria-label="打开菜单" aria-expanded="false">
+          <svg viewBox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+        </button>
+
         <nav class="nav-links" aria-label="主导航">
           <a href="/listings/">房源</a>
           <a href="#why">我们的优势</a>
@@ -339,5 +343,15 @@
       <div class="shell copyright">&copy; 2026 APOGEE PM LLC. 版权所有。</div>
     </footer>
   </div>
+  <script>
+    document.querySelector('.nav-toggle').addEventListener('click', function () {
+      var nav = document.querySelector('.nav-links');
+      var open = nav.classList.toggle('is-open');
+      this.setAttribute('aria-expanded', open);
+      this.innerHTML = open
+        ? '<svg viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></svg>'
+        : '<svg viewBox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18"/></svg>';
+    });
+  </script>
 </body>
 </html>

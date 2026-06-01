@@ -159,6 +159,10 @@
             <span class="brand-kicker">Property Management</span>
           </span>
         </a>
+        <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">
+          <svg viewBox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+        </button>
+
         <nav class="nav-links" aria-label="Primary navigation">
           <a href="/listings/">Listings</a>
           <a href="/#why">Why Us</a>
@@ -348,5 +352,15 @@
     </footer>
 
   </div>
+  <script>
+    document.querySelector('.nav-toggle').addEventListener('click', function () {
+      var nav = document.querySelector('.nav-links');
+      var open = nav.classList.toggle('is-open');
+      this.setAttribute('aria-expanded', open);
+      this.innerHTML = open
+        ? '<svg viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></svg>'
+        : '<svg viewBox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18"/></svg>';
+    });
+  </script>
 </body>
 </html>
