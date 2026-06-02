@@ -995,6 +995,56 @@ a.step:hover .step-num {
   line-height: 1.5;
 }
 
+/* ── Apply band ────────────────────────────────────── */
+.apply-band {
+  background: #fff;
+  border-top: 1px solid rgba(6,26,53,.07);
+  border-bottom: 1px solid rgba(6,26,53,.07);
+  padding: 1.6rem 0;
+}
+.apply-inner {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  max-width: 720px;
+  margin: 0 auto;
+}
+.apply-icon svg {
+  stroke: var(--gold);
+  stroke-width: 1.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  fill: none;
+  flex-shrink: 0;
+}
+.apply-text {
+  flex: 1;
+}
+.apply-text h3 {
+  font-size: .95rem;
+  color: var(--navy);
+  margin-bottom: .2rem;
+  font-family: var(--sans);
+  font-weight: 700;
+}
+.apply-text p {
+  font-size: .82rem;
+  color: rgba(6,26,53,.55);
+  line-height: 1.5;
+  margin: 0;
+}
+.apply-band .button {
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+@media (max-width: 600px) {
+  .apply-inner {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+  }
+}
+
 @media (max-width: 980px) {
   .site-header {
     position: relative;
