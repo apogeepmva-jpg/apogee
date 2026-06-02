@@ -997,52 +997,45 @@ a.step:hover .step-num {
 
 /* ── Apply band ────────────────────────────────────── */
 .apply-band {
-  background: #fff;
-  border-top: 1px solid rgba(6,26,53,.07);
-  border-bottom: 1px solid rgba(6,26,53,.07);
-  padding: 1.6rem 0;
+  background: var(--navy);
+  padding: 4rem 0;
 }
-.apply-inner {
-  display: flex;
-  align-items: center;
-  gap: 1.25rem;
-  max-width: 720px;
+.apply-card {
+  max-width: 560px;
   margin: 0 auto;
+  text-align: center;
 }
-.apply-icon svg {
-  stroke: var(--gold);
-  stroke-width: 1.6;
+.apply-card .eyebrow {
+  color: var(--gold);
+}
+.apply-card h2 {
+  color: var(--paper);
+  font-size: clamp(1.4rem, 2.8vw, 1.8rem);
+  margin-bottom: 1rem;
+}
+.apply-desc {
+  color: rgba(251,248,242,.65);
+  font-size: .92rem;
+  line-height: 1.7;
+  margin-bottom: 2rem;
+}
+.apply-card .button {
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+}
+.apply-card .button .mini-icon svg {
+  stroke: var(--navy);
+  stroke-width: 2;
   stroke-linecap: round;
   stroke-linejoin: round;
   fill: none;
-  flex-shrink: 0;
 }
-.apply-text {
-  flex: 1;
-}
-.apply-text h3 {
-  font-size: .95rem;
-  color: var(--navy);
-  margin-bottom: .2rem;
+.apply-note {
+  margin-top: 1rem;
+  font-size: .78rem;
+  color: rgba(251,248,242,.4);
   font-family: var(--sans);
-  font-weight: 700;
-}
-.apply-text p {
-  font-size: .82rem;
-  color: rgba(6,26,53,.55);
-  line-height: 1.5;
-  margin: 0;
-}
-.apply-band .button {
-  white-space: nowrap;
-  flex-shrink: 0;
-}
-@media (max-width: 600px) {
-  .apply-inner {
-    flex-direction: column;
-    text-align: center;
-    gap: 1rem;
-  }
 }
 
 @media (max-width: 980px) {
