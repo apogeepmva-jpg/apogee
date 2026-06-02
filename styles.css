@@ -936,6 +936,16 @@ h1 em {
   text-align: center;
   position: relative;
   padding: 0 .6rem;
+  text-decoration: none;
+  color: inherit;
+  transition: transform .2s;
+}
+a.step:hover {
+  transform: translateY(-4px);
+}
+a.step:hover .step-num {
+  background: var(--gold);
+  border-color: var(--gold);
 }
 .step-num {
   width: 48px;
