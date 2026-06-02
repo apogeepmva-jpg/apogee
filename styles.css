@@ -942,7 +942,7 @@ h1 em {
   height: 48px;
   border-radius: 50%;
   background: var(--navy);
-  color: var(--gold-lt);
+  color: #fff;
   display: inline-flex;
   align-items: center;
   justify-content: center;
