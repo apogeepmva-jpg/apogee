@@ -162,11 +162,23 @@
   <h2><span class="num">3</span>What It Costs to Run</h2>
   <table>
     <tr><th>Item</th><th>Monthly cost</th></tr>
-    <tr><td>Website hosting, calendar, booking database, email alerts, spam protection</td><td><strong>$0</strong> (all on free professional tiers)</td></tr>
+    <tr><td>Website hosting, calendar, booking database, email alerts, spam protection</td><td><strong>$0 to $25</strong> (free tier to start; Supabase Pro at $25/mo when production traffic warrants it)</td></tr>
     <tr><td>Secure document upload service (Decision 1 below)</td><td>$0 to ~$10</td></tr>
     <tr><td>Online payments, only if/when enabled (Decisions 5 to 8)</td><td>No monthly fee; card processing ~2.9% + 30¢ per transaction</td></tr>
   </table>
   <p>There is no subscription to a booking platform and no commission on any booking.</p>
+
+  <div class="note">
+    <strong>Question for Bonnie:</strong> The database starts free but may need the $25/mo pro tier once real tenants are using it daily. Is $25/mo affordable when needed? (Still far cheaper than any SaaS alternative.)
+  </div>
+
+  <h3 style="font-family:var(--serif);font-weight:400;font-size:1.15rem;margin:2rem 0 .8rem;">How this compares to off-the-shelf platforms</h3>
+  <table>
+    <tr><th>Option</th><th>Cost</th><th>Notes</th></tr>
+    <tr><td>Bookingmood (short-term rental SaaS widget)</td><td>$19 to $33/mo</td><td>Closest SaaS fit: pure embed widget, native request-to-book mode, can skip payments. But no bilingual support and limited branding control.</td></tr>
+    <tr><td>SuperSaaS (venue booking SaaS)</td><td>Free basic tier</td><td>Has the core features, but the UI looks dated and clashes with the navy/gold brand. Worth a quick trial if there are concerns about self-build.</td></tr>
+    <tr><td>Self-build on Supabase <span class="rec">✓ Recommended</span></td><td>$0 to $25/mo</td><td>3 to 4 working days to build. Calendar and forms match the existing site pixel-for-pixel, full bilingual EN+ZH, no third-party branding, you own all the data.</td></tr>
+  </table>
 
   <h2><span class="num">4</span>Rollout in Phases</h2>
   <table>
