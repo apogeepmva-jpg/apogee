@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<title>Direct Booking System: Project Plan | APOGEE PM</title>
+<link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32.png">
+<style>
+  :root {
+    --navy: #061a35;
+    --navy-2: #082346;
+    --gold: #b77924;
+    --gold-2: #d59a34;
+    --paper: #fbf8f2;
+    --serif: Georgia, 'Times New Roman', serif;
+    --sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: var(--sans);
+    background: var(--paper);
+    color: var(--navy);
+    line-height: 1.65;
+    font-size: 15.5px;
+  }
+  .doc { max-width: 880px; margin: 0 auto; padding: 0 1.5rem 4rem; }
+
+  .doc-header {
+    background: var(--navy);
+    color: var(--paper);
+    padding: 3rem 1.5rem 2.6rem;
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+  .doc-header .eyebrow {
+    font-size: 11px; letter-spacing: .22em; text-transform: uppercase;
+    color: var(--gold-2); font-weight: 700; margin-bottom: .8rem;
+  }
+  .doc-header h1 { font-family: var(--serif); font-size: clamp(1.7rem, 4vw, 2.3rem); font-weight: 400; }
+  .doc-header p { color: rgba(251,248,242,.6); margin-top: .6rem; font-size: .9rem; }
+
+  h2 {
+    font-family: var(--serif); font-weight: 400;
+    font-size: 1.45rem; margin: 3rem 0 1rem;
+    padding-bottom: .5rem; border-bottom: 2px solid var(--gold);
+  }
+  h2 .num { color: var(--gold); margin-right: .5rem; }
+  p + p { margin-top: .8rem; }
+
+  .flow { list-style: none; counter-reset: step; margin: 1.2rem 0; }
+  .flow li {
+    counter-increment: step; position: relative;
+    padding: .45rem 0 .45rem 3rem;
+  }
+  .flow li::before {
+    content: counter(step);
+    position: absolute; left: 0; top: .45rem;
+    width: 30px; height: 30px; border-radius: 50%;
+    background: var(--navy); color: #fff;
+    font-family: var(--serif); font-size: .9rem;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .flow li strong { color: var(--navy); }
+
+  table { width: 100%; border-collapse: collapse; margin: 1.2rem 0; font-size: .9rem; }
+  th { text-align: left; font-size: 11px; letter-spacing: .08em; text-transform: uppercase; color: var(--gold); padding: .5rem .7rem; border-bottom: 2px solid var(--navy); }
+  td { padding: .55rem .7rem; border-bottom: 1px solid rgba(6,26,53,.12); vertical-align: top; }
+
+  .decision {
+    background: #fff;
+    border: 1px solid rgba(6,26,53,.1);
+    border-left: 4px solid var(--gold);
+    border-radius: 3px;
+    padding: 1.2rem 1.4rem;
+    margin: 1rem 0;
+    box-shadow: 0 1px 8px rgba(6,26,53,.05);
+  }
+  .decision-tag {
+    display: inline-block;
+    font-size: 10px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase;
+    background: var(--gold); color: #fff;
+    padding: .2rem .55rem; border-radius: 2px;
+    margin-bottom: .5rem;
+  }
+  .decision h3 { font-size: 1.02rem; margin-bottom: .35rem; }
+  .decision p { font-size: .9rem; color: rgba(6,26,53,.75); }
+  .decision ul { margin: .6rem 0 0 1.1rem; font-size: .9rem; }
+  .decision li { margin: .3rem 0; }
+  .rec {
+    background: rgba(183,121,36,.12);
+    border-radius: 2px; padding: .05rem .4rem;
+    font-weight: 700; font-size: .78rem; color: var(--gold);
+    white-space: nowrap;
+  }
+
+  .checklist { list-style: none; margin: 1rem 0; }
+  .checklist li {
+    position: relative; padding: .4rem 0 .4rem 2.1rem; font-size: .93rem;
+  }
+  .checklist li::before {
+    content: ""; position: absolute; left: 0; top: .58rem;
+    width: 15px; height: 15px;
+    border: 2px solid var(--gold); border-radius: 3px;
+  }
+  .checklist li strong { color: var(--navy); }
+
+  .note {
+    background: var(--navy); color: rgba(251,248,242,.85);
+    border-radius: 3px; padding: 1rem 1.3rem;
+    font-size: .88rem; margin: 1.4rem 0;
+  }
+  .note strong { color: var(--gold-2); }
+
+  .phase-optional td { color: rgba(6,26,53,.55); }
+  .badge-opt {
+    font-size: 10px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase;
+    border: 1px solid var(--gold); color: var(--gold);
+    padding: .1rem .4rem; border-radius: 2px; white-space: nowrap;
+  }
+
+  .doc-footer {
+    margin-top: 3.5rem; padding-top: 1.2rem;
+    border-top: 1px solid rgba(6,26,53,.15);
+    font-size: .82rem; color: rgba(6,26,53,.55);
+    display: flex; justify-content: space-between; flex-wrap: wrap; gap: .5rem;
+  }
+
+  @media print {
+    .doc-header { padding: 1.6rem 1rem; }
+    body { font-size: 12px; }
+    .decision { box-shadow: none; break-inside: avoid; }
+    h2 { break-after: avoid; }
+  }
+</style>
+</head>
+<body>
+
+<header class="doc-header">
+  <p class="eyebrow">APOGEE PM · Project Plan</p>
+  <h1>Direct Booking for Suite 207</h1>
+  <p>Online availability, booking requests, and your own review workflow. No platform fees.</p>
+</header>
+
+<div class="doc">
+
+  <h2><span class="num">1</span>What We're Building</h2>
+  <p>A booking section on <strong>apogeepmllc.com</strong> where prospective tenants can see exactly which dates are open for the office, request the dates they want, and send you their application. You stay in full control: nothing is confirmed until you review the documents and click approve. Once you approve, those dates automatically close on the public calendar.</p>
+  <p>It works like the big platforms, but tenants book directly with you: no Airbnb-style commissions, and every inquiry lands in your inbox and your own dashboard.</p>
+
+  <h2><span class="num">2</span>How a Booking Flows</h2>
+  <ol class="flow">
+    <li><strong>Tenant browses the calendar</strong> on the website: open dates are selectable, taken dates are greyed out.</li>
+    <li><strong>Tenant requests dates</strong> and submits a short form (name, contact, company, message).</li>
+    <li><strong>You get an email alert instantly.</strong> The tenant gets a confirmation with a secure link to upload their documents.</li>
+    <li><strong>You review</strong> the request and documents at your own pace, in a simple private dashboard.</li>
+    <li><strong>One click to approve</strong>: the dates lock on the calendar automatically. Declining keeps the dates open.</li>
+    <li><strong>Lease and payment</strong> happen the way you choose: fully offline, or with the optional online payment steps below.</li>
+  </ol>
+  <p>Note: a pending request does <em>not</em> block the calendar. Several people can apply for the same dates and you pick the best applicant: only your approval locks the dates (this is how request-to-book works on Airbnb too).</p>
+
+  <h2><span class="num">3</span>What It Costs to Run</h2>
+  <table>
+    <tr><th>Item</th><th>Monthly cost</th></tr>
+    <tr><td>Website hosting, calendar, booking database, email alerts, spam protection</td><td><strong>$0</strong> (all on free professional tiers)</td></tr>
+    <tr><td>Secure document upload service (Decision 1 below)</td><td>$0 to ~$10</td></tr>
+    <tr><td>Online payments, only if/when enabled (Decisions 5 to 8)</td><td>No monthly fee; card processing ~2.9% + 30¢ per transaction</td></tr>
+  </table>
+  <p>There is no subscription to a booking platform and no commission on any booking.</p>
+
+  <h2><span class="num">4</span>Rollout in Phases</h2>
+  <table>
+    <tr><th>Phase</th><th>What goes live</th></tr>
+    <tr><td><strong>1. Live calendar</strong></td><td>Booking page with real availability (read-only at first), English + Chinese</td></tr>
+    <tr><td><strong>2. Requests open</strong></td><td>Tenants can submit booking requests; you get instant email alerts</td></tr>
+    <tr><td><strong>3. Your dashboard</strong></td><td>Private review page: approve / decline / block dates manually. We'll walk you through it (5 minutes)</td></tr>
+    <tr><td><strong>4. Polish</strong></td><td>Automatic confirmation emails to tenants with the document-upload link; site-wide links to the booking page</td></tr>
+    <tr class="phase-optional"><td><strong>5. Booking fee</strong> <span class="badge-opt">optional</span></td><td>Tenants can pay a flat booking fee online by card. Paying does not skip your review; it just flags the request as serious</td></tr>
+    <tr class="phase-optional"><td><strong>6. Online settlement</strong> <span class="badge-opt">optional</span></td><td>Approved tenants request a settlement, the system calculates the amount from your rate card, <em>you approve the amount</em>, then they can pay online</td></tr>
+  </table>
+  <p>Phases 1 to 4 take about a week of build time once the decisions below are settled. Phases 5 and 6 are entirely optional, can come later, or never: nothing else depends on them.</p>
+
+  <h2><span class="num">5</span>Decisions We Need From You</h2>
+  <p>Eight decisions. The first four unblock the build; the last four only matter if you want online payments.</p>
+
+  <div class="decision">
+    <span class="decision-tag">Decision 1</span>
+    <h3>Where tenants upload their documents</h3>
+    <p>Application documents (IDs, bank statements) are sensitive, so we use a professional service rather than building our own storage. First, please check: <strong>is your ShareFile account paid by you, or provided by your brokerage?</strong></p>
+    <ul>
+      <li><strong>Dropbox Plus</strong> ($9.99/mo) <span class="rec">✓ Recommended</span> : tenants upload through a simple link, no account needed, and can never see anyone else's files. Familiar to everyone. We can start on the free Dropbox tier to test it.</li>
+      <li><strong>Keep ShareFile</strong> ($0 if your brokerage pays for it): it does everything needed; we just switch the website to a proper upload-request link instead of the login page. If you'd be paying for it yourself it runs ~$49.50/mo minimum, in which case we switch.</li>
+      <li><strong>Sync.com</strong> ($6/mo): the maximum-security option (end-to-end encrypted). Slightly less familiar interface.</li>
+    </ul>
+  </div>
+
+  <div class="decision">
+    <span class="decision-tag">Decision 2</span>
+    <h3>Book the whole suite, or individual rooms?</h3>
+    <ul>
+      <li><strong>Whole suite first</strong> <span class="rec">✓ Recommended</span> : simplest calendar, fastest launch. The system is already built to add the 5 rooms individually later, no rework needed.</li>
+      <li><strong>Per-room from day one</strong>: possible, but the calendar and your review work get 5x busier immediately.</li>
+    </ul>
+  </div>
+
+  <div class="decision">
+    <span class="decision-tag">Decision 3</span>
+    <h3>Shortest and longest stay you'll accept</h3>
+    <p>For example: minimum 1 week? Maximum 6 months? Also: when one tenant moves out in the morning, can the next one move in the same day, or do you want a buffer day for cleaning?</p>
+  </div>
+
+  <div class="decision">
+    <span class="decision-tag">Decision 4</span>
+    <h3>Show prices on the calendar, or "Inquire for rates"?</h3>
+    <p>Showing a daily/weekly/monthly rate filters out unqualified inquiries; "inquire" keeps your pricing flexible per tenant. Either works; if you show prices we'll need your rate card.</p>
+  </div>
+
+  <div class="decision">
+    <span class="decision-tag">Decision 5 · Payments</span>
+    <h3>Booking fee: amount and rules</h3>
+    <p>How much is the flat booking fee? Is it required to apply, or optional (paid requests get priority review)? If you decline an applicant, the fee is refunded with one click <span class="rec">✓ Recommended</span>.</p>
+  </div>
+
+  <div class="decision">
+    <span class="decision-tag">Decision 6 · Payments</span>
+    <h3>Your rate card</h3>
+    <p>Daily, weekly, and monthly rates: the system uses these to calculate settlements automatically (you always confirm the final amount before a tenant can pay). Security deposit is best handled offline <span class="rec">✓ Recommended</span> to avoid card fees on large amounts.</p>
+  </div>
+
+  <div class="decision">
+    <span class="decision-tag">Decision 7 · Payments</span>
+    <h3>Who absorbs the card processing fee?</h3>
+    <p>Roughly 2.9% + 30¢ per transaction (e.g. $6.10 on a $200 payment). Either you absorb it, or it's added to the tenant's total.</p>
+  </div>
+
+  <div class="decision">
+    <span class="decision-tag">Decision 8</span>
+    <h3>Will you also list on Airbnb / LoopNet later?</h3>
+    <p>If yes, we add calendar sync now so the same dates can never be double-booked across platforms. Cheap to add up front, annoying to retrofit.</p>
+  </div>
+
+  <h2><span class="num">6</span>Accounts You'll Need (We'll Guide You)</h2>
+  <ul class="checklist">
+    <li><strong>Document service</strong> (per Decision 1): confirm who pays for ShareFile, or create the Dropbox account. ~10 minutes.</li>
+    <li><strong>Supabase</strong> (the booking database, free): create the account with your email so the business owns its own data; we set up everything inside it. ~5 minutes.</li>
+    <li><strong>Stripe</strong> (only for Phases 5/6): the payment account is opened in your name with your business details (EIN/SSN) and bank account, so money goes directly to you. ~20 minutes, and payments can't start without it.</li>
+    <li><strong>Google Workspace</strong> (already planned for info@apogeepmllc.com): when we do its DNS setup, we'll add the email-sending records for booking confirmations in the same session.</li>
+  </ul>
+
+  <h2><span class="num">7</span>Your Day-to-Day Once Live</h2>
+  <ol class="flow">
+    <li><strong>Email arrives</strong>: "New booking request for Suite 207."</li>
+    <li><strong>Open your dashboard</strong>, look at the request, check the uploaded documents.</li>
+    <li><strong>Click Approve or Decline.</strong> Approve locks the dates on the public calendar instantly. That's it.</li>
+  </ol>
+  <div class="note">
+    <strong>One housekeeping rule:</strong> documents from declined applicants should be deleted within 30 days, and tenant documents cleaned up after a lease ends. This is a federal requirement (FCRA) for anyone reviewing applicant materials, and it keeps your storage tidy. We'll include this in your one-page dashboard guide.
+  </div>
+
+  <div class="doc-footer">
+    <span>APOGEE PM LLC · Direct Booking System · Project Plan</span>
+    <span>Prepared June 2026 · Questions: just reply to Sasha</span>
+  </div>
+
+</div>
+</body>
+</html>
