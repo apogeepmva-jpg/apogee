@@ -21,20 +21,25 @@
       padding: 3rem 0 2.8rem;
       text-align: center;
     }
-    .back-link {
+    .svc-breadcrumb {
       display: inline-flex;
       align-items: center;
-      gap: .35rem;
+      gap: .4rem;
       font-size: 12px;
       font-family: var(--sans);
       letter-spacing: .06em;
       text-transform: uppercase;
+      margin-bottom: 1.2rem;
+    }
+    .svc-breadcrumb a {
       color: var(--gold-2);
       text-decoration: none;
-      margin-bottom: 1rem;
-      opacity: .8;
+      opacity: .75;
+      transition: opacity .2s;
     }
-    .back-link:hover { opacity: 1; }
+    .svc-breadcrumb a:hover { opacity: 1; }
+    .svc-breadcrumb .sep { color: rgba(251,248,242,.3); }
+    .svc-breadcrumb .current { color: rgba(251,248,242,.5); }
     .svc-hero h1 {
       font-size: clamp(1.8rem, 3.5vw, 2.4rem);
       color: var(--paper);
@@ -443,7 +448,11 @@
 
       <section class="svc-hero">
         <div class="shell">
-          <a class="back-link" href="/zh/">&#8592; APOGEE PM</a>
+          <nav class="svc-breadcrumb" aria-label="Breadcrumb">
+            <a href="/zh/">首页</a>
+            <span class="sep">/</span>
+            <span class="current">服务</span>
+          </nav>
           <p class="eyebrow">Business Office Solutions</p>
           <h1>尊享商务办公解决方案</h1>
           <p class="sub">灵活虚拟办公方案，<strong>$50/月</strong>起。专业美国商务地址、信件管理与私密办公空间，无需承担全职办公室的成本。</p>

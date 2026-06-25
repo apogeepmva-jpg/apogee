@@ -21,20 +21,25 @@
       padding: 3rem 0 2.8rem;
       text-align: center;
     }
-    .back-link {
+    .svc-breadcrumb {
       display: inline-flex;
       align-items: center;
-      gap: .35rem;
+      gap: .4rem;
       font-size: 12px;
       font-family: var(--sans);
       letter-spacing: .06em;
       text-transform: uppercase;
+      margin-bottom: 1.2rem;
+    }
+    .svc-breadcrumb a {
       color: var(--gold-2);
       text-decoration: none;
-      margin-bottom: 1rem;
-      opacity: .8;
+      opacity: .75;
+      transition: opacity .2s;
     }
-    .back-link:hover { opacity: 1; }
+    .svc-breadcrumb a:hover { opacity: 1; }
+    .svc-breadcrumb .sep { color: rgba(251,248,242,.3); }
+    .svc-breadcrumb .current { color: rgba(251,248,242,.5); }
     .svc-hero h1 {
       font-size: clamp(1.8rem, 3.5vw, 2.4rem);
       color: var(--paper);
@@ -443,7 +448,11 @@
 
       <section class="svc-hero">
         <div class="shell">
-          <a class="back-link" href="/">&#8592; APOGEE PM</a>
+          <nav class="svc-breadcrumb" aria-label="Breadcrumb">
+            <a href="/">Home</a>
+            <span class="sep">/</span>
+            <span class="current">Services</span>
+          </nav>
           <p class="eyebrow">Business Office Solutions</p>
           <h1>Your Professional Presence in Virginia</h1>
           <p class="sub">Flexible virtual office plans starting at <strong>$50/month</strong>. A real business address, mail services, and private meeting space, without the overhead of a full-time office.</p>
