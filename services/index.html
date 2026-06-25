@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Business Office Solutions | APOGEE PM</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/img/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../assets/img/favicon-16.png">
+  <link rel="apple-touch-icon" href="../assets/img/apple-touch-icon.png">
+  <link rel="canonical" href="https://apogeepmllc.com/services/">
+  <link rel="alternate" hreflang="en" href="https://apogeepmllc.com/services/">
+  <link rel="alternate" hreflang="zh-CN" href="https://apogeepmllc.com/zh/services/">
+  <link rel="alternate" hreflang="x-default" href="https://apogeepmllc.com/services/">
+  <link rel="stylesheet" href="../tokens.css">
+  <link rel="stylesheet" href="../styles.css">
+  <style>
+    /* ── Page hero ─────────────────────────────────────── */
+    .svc-hero {
+      background: var(--navy);
+      color: var(--paper);
+      padding: 3rem 0 2.8rem;
+      text-align: center;
+    }
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: .35rem;
+      font-size: 12px;
+      font-family: var(--sans);
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      color: var(--gold-2);
+      text-decoration: none;
+      margin-bottom: 1rem;
+      opacity: .8;
+    }
+    .back-link:hover { opacity: 1; }
+    .svc-hero h1 {
+      font-size: clamp(1.8rem, 3.5vw, 2.4rem);
+      color: var(--paper);
+      margin-bottom: .5rem;
+    }
+    .svc-hero .sub {
+      color: rgba(251,248,242,.6);
+      font-size: .92rem;
+      font-family: var(--sans);
+      max-width: 540px;
+      margin: 0 auto;
+    }
+    .svc-hero .sub strong {
+      color: var(--gold-2);
+      font-weight: 600;
+    }
+
+    /* ── Tier section ──────────────────────────────────── */
+    .svc-tiers {
+      background: var(--paper);
+      padding: 4rem 0 3.5rem;
+    }
+    .tier-header {
+      text-align: center;
+      margin-bottom: 2.5rem;
+    }
+    .tier-header h2 {
+      font-size: 1.5rem;
+      color: var(--navy);
+      margin-top: .5rem;
+    }
+
+    .tier-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      align-items: start;
+    }
+    @media (max-width: 860px) {
+      .tier-grid { grid-template-columns: 1fr; max-width: 480px; margin: 0 auto; }
+    }
+
+    .tier-card {
+      background: #fff;
+      border: 1px solid rgba(6,26,53,.1);
+      border-radius: 3px;
+      padding: 2rem 1.6rem 1.8rem;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 2px 12px rgba(6,26,53,.05);
+      position: relative;
+    }
+    .tier-card-featured {
+      border-color: var(--gold);
+      box-shadow: 0 4px 24px rgba(183,121,36,.12);
+    }
+    .tier-card-featured::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: var(--gold);
+      border-radius: 3px 3px 0 0;
+    }
+
+    .tier-badge {
+      display: inline-block;
+      font-size: 10px;
+      font-family: var(--sans);
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      background: var(--gold);
+      color: #fff;
+      padding: .2rem .55rem;
+      border-radius: 2px;
+      margin-bottom: .8rem;
+      align-self: flex-start;
+    }
+    .tier-badge-outline {
+      background: transparent;
+      border: 1.5px solid var(--navy);
+      color: var(--navy);
+    }
+
+    .tier-name {
+      font-family: var(--serif);
+      font-size: 1.15rem;
+      font-weight: 400;
+      color: var(--navy);
+      margin-bottom: .3rem;
+    }
+    .tier-price {
+      font-family: var(--sans);
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: .15rem;
+    }
+    .tier-price span {
+      font-size: .88rem;
+      font-weight: 400;
+      color: rgba(6,26,53,.5);
+    }
+    .tier-best {
+      font-size: .82rem;
+      color: rgba(6,26,53,.55);
+      margin-bottom: 1.2rem;
+      line-height: 1.5;
+    }
+
+    .tier-divider {
+      height: 1px;
+      background: linear-gradient(to right, var(--gold), transparent);
+      margin-bottom: 1.2rem;
+      opacity: .4;
+    }
+
+    .tier-features {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: .45rem;
+      flex: 1;
+    }
+    .tier-features li {
+      font-size: .86rem;
+      color: rgba(6,26,53,.75);
+      padding-left: 1.2rem;
+      position: relative;
+      line-height: 1.5;
+    }
+    .tier-features li::before {
+      content: "✦";
+      font-size: 7px;
+      color: var(--gold);
+      position: absolute;
+      left: 0;
+      top: .35rem;
+    }
+    .tier-features .inherited {
+      color: rgba(6,26,53,.45);
+    }
+
+    .tier-ideal {
+      font-size: .78rem;
+      color: rgba(6,26,53,.5);
+      border-top: 1px solid rgba(6,26,53,.08);
+      padding-top: .8rem;
+      margin-top: auto;
+      line-height: 1.55;
+    }
+    .tier-ideal strong {
+      color: var(--navy);
+      font-weight: 600;
+    }
+
+    .tier-cta {
+      margin-top: 1.2rem;
+    }
+    .tier-cta .button {
+      display: block;
+      text-align: center;
+      width: 100%;
+      font-size: .88rem;
+      padding: .65rem 1rem;
+    }
+
+    /* ── Why section ───────────────────────────────────── */
+    .svc-why {
+      background: var(--navy);
+      padding: 3.5rem 0;
+    }
+    .svc-why-header {
+      text-align: center;
+      margin-bottom: 2.5rem;
+    }
+    .svc-why-header h2 {
+      color: var(--paper);
+      font-size: 1.45rem;
+      margin-top: .5rem;
+    }
+    .svc-why-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
+    }
+    @media (max-width: 760px) {
+      .svc-why-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 480px) {
+      .svc-why-grid { grid-template-columns: 1fr; }
+    }
+    .svc-why-item {
+      text-align: center;
+    }
+    .svc-why-item .icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 48px;
+      height: 48px;
+      margin: 0 auto .8rem;
+    }
+    .svc-why-item .icon svg {
+      width: 36px;
+      height: 36px;
+      fill: none;
+      stroke: var(--gold-2);
+      stroke-width: 1.6;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+    .svc-why-item h3 {
+      font-family: var(--serif);
+      font-size: .95rem;
+      font-weight: 400;
+      color: var(--paper);
+      margin-bottom: .4rem;
+    }
+    .svc-why-item p {
+      font-size: .82rem;
+      color: rgba(251,248,242,.55);
+      line-height: 1.55;
+    }
+
+    /* ── Partner section ───────────────────────────────── */
+    .svc-partner {
+      background: var(--paper);
+      padding: 3.5rem 0;
+      border-top: 1px solid rgba(6,26,53,.08);
+    }
+    .partner-layout {
+      display: grid;
+      grid-template-columns: 1fr 1.5fr;
+      gap: 3rem;
+      align-items: start;
+    }
+    @media (max-width: 760px) {
+      .partner-layout { grid-template-columns: 1fr; gap: 1.5rem; }
+    }
+    .partner-intro h2 {
+      font-size: 1.3rem;
+      color: var(--navy);
+      margin-bottom: .6rem;
+    }
+    .partner-intro p {
+      font-size: .9rem;
+      color: rgba(6,26,53,.65);
+      line-height: 1.65;
+    }
+    .partner-services {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: .5rem .8rem;
+    }
+    @media (max-width: 480px) {
+      .partner-services { grid-template-columns: 1fr; }
+    }
+    .partner-item {
+      display: flex;
+      align-items: center;
+      gap: .6rem;
+      padding: .65rem .8rem;
+      background: #fff;
+      border: 1px solid rgba(6,26,53,.06);
+      border-radius: 3px;
+      font-size: .86rem;
+      color: var(--navy);
+    }
+    .partner-item .mini-icon {
+      flex-shrink: 0;
+    }
+    .partner-item .mini-icon svg {
+      width: 16px;
+      height: 16px;
+      fill: none;
+      stroke: var(--gold);
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    /* ── Notes section ─────────────────────────────────── */
+    .svc-notes {
+      background: var(--soft);
+      padding: 2.5rem 0;
+      border-top: 1px solid rgba(6,26,53,.08);
+    }
+    .svc-notes h2 {
+      font-family: var(--sans);
+      font-size: .8rem;
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--navy);
+      margin-bottom: 1.2rem;
+    }
+    .notes-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: .55rem;
+    }
+    .notes-list li {
+      font-size: .82rem;
+      color: rgba(6,26,53,.6);
+      line-height: 1.6;
+      padding-left: 1.4rem;
+      position: relative;
+    }
+    .notes-list li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: .45rem;
+      width: 6px;
+      height: 6px;
+      border: 1.5px solid var(--gold);
+      border-radius: 1px;
+    }
+
+    /* ── Bottom CTA ────────────────────────────────────── */
+    .svc-cta {
+      background: var(--navy);
+      padding: 3.2rem 0;
+      text-align: center;
+    }
+    .svc-cta h2 {
+      color: var(--paper);
+      font-size: 1.45rem;
+      margin-bottom: .5rem;
+    }
+    .svc-cta p {
+      color: rgba(251,248,242,.6);
+      font-size: .92rem;
+      margin-bottom: 1.6rem;
+    }
+    .svc-cta .cta-row {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    /* ── Location bar ──────────────────────────────────── */
+    .svc-location {
+      background: var(--paper);
+      padding: 1.8rem 0;
+      text-align: center;
+      border-top: 1px solid rgba(6,26,53,.08);
+    }
+    .svc-location p {
+      font-size: .82rem;
+      color: rgba(6,26,53,.5);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: .4rem;
+      flex-wrap: wrap;
+    }
+    .svc-location .mini-icon svg {
+      width: 14px;
+      height: 14px;
+      fill: none;
+      stroke: var(--gold);
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+
+    <header class="site-header">
+      <div class="shell nav">
+        <a class="brand" href="/" aria-label="APOGEE PM home">
+          <img class="brand-mark" src="../assets/img/apogee-mark.svg" alt="" aria-hidden="true" width="46" height="50">
+          <span>
+            <span class="brand-word">APOGEE PM</span>
+            <span class="brand-kicker">Property Management</span>
+          </span>
+        </a>
+        <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">
+          <svg viewBox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+        </button>
+
+        <nav class="nav-links" aria-label="Primary navigation">
+          <a href="/services/" aria-current="page">Services</a>
+          <a href="/listings/">Listings</a>
+          <a href="/#why">Why Us</a>
+          <a href="/#about">About</a>
+          <a href="/#contact">Contact</a>
+          <a href="/zh/services/" hreflang="zh-CN" lang="zh-CN">中文</a>
+          <a class="button button-dark" href="/#contact">Get in Touch</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+
+      <section class="svc-hero">
+        <div class="shell">
+          <a class="back-link" href="/">&#8592; APOGEE PM</a>
+          <p class="eyebrow">Business Office Solutions</p>
+          <h1>Your Professional Presence in Virginia</h1>
+          <p class="sub">Flexible virtual office plans starting at <strong>$50/month</strong>. A real business address, mail services, and private meeting space, without the overhead of a full-time office.</p>
+        </div>
+      </section>
+
+      <!-- ─ Service tiers ──────────────────────────────── -->
+      <section class="svc-tiers">
+        <div class="shell">
+          <div class="tier-header">
+            <p class="eyebrow">Service Plans</p>
+            <h2>Choose Your Level</h2>
+          </div>
+
+          <div class="tier-grid">
+
+            <!-- Level 1 -->
+            <div class="tier-card">
+              <span class="tier-badge tier-badge-outline">Level 1</span>
+              <h3 class="tier-name">Basic Virtual Office</h3>
+              <p class="tier-price">$50 <span>/ month</span></p>
+              <p class="tier-best">Best for clients who need a professional US business address and mail services.</p>
+              <div class="tier-divider"></div>
+              <ul class="tier-features">
+                <li>Professional US business address</li>
+                <li>Can be used as company registration address (where permitted)</li>
+                <li>Mail receiving during business hours</li>
+                <li>Email notification on mail arrival</li>
+                <li>Mail scanning on request</li>
+                <li>Short-term secure mail holding</li>
+                <li>Professional office location to enhance business image</li>
+              </ul>
+              <p class="tier-ideal"><strong>Ideal for:</strong> International business owners, cross-border e-commerce, startups, freelancers, consultants, home office professionals</p>
+              <div class="tier-cta">
+                <a class="button" href="/#contact">Inquire</a>
+              </div>
+            </div>
+
+            <!-- Level 2 -->
+            <div class="tier-card tier-card-featured">
+              <span class="tier-badge">Popular Choice</span>
+              <h3 class="tier-name">Advanced Virtual Office</h3>
+              <p class="tier-price">$150 <span>/ month</span></p>
+              <p class="tier-best">Best for clients who need mail services with occasional use of office space.</p>
+              <div class="tier-divider"></div>
+              <ul class="tier-features">
+                <li class="inherited">Everything in Level 1, plus:</li>
+                <li>Authorized mail opening and basic handling</li>
+                <li>Mail and document forwarding assistance</li>
+                <li>2 hours/month private office or meeting space</li>
+                <li>Office space by appointment</li>
+                <li>Shared phone (outbound business calls only)</li>
+                <li>Basic administrative support during booked sessions</li>
+              </ul>
+              <p class="tier-ideal"><strong>Ideal for:</strong> Small business owners, real estate agents, insurance agents, financial professionals, remote workers, growing businesses</p>
+              <div class="tier-cta">
+                <a class="button button-dark" href="/#contact">Get Started</a>
+              </div>
+            </div>
+
+            <!-- Level 3 -->
+            <div class="tier-card">
+              <span class="tier-badge tier-badge-outline">Level 3</span>
+              <h3 class="tier-name">Executive Business Suite</h3>
+              <p class="tier-price">$350 <span>/ month</span></p>
+              <p class="tier-best">Best for clients who need regular meeting room access and a professional client-facing space.</p>
+              <div class="tier-divider"></div>
+              <ul class="tier-features">
+                <li class="inherited">Everything in Level 2, plus:</li>
+                <li>Up to 10 hours/month private meeting room</li>
+                <li>Meeting room with TV/presentation screen</li>
+                <li>Suitable for meetings, interviews, training, and negotiations</li>
+                <li>Priority scheduling for available space</li>
+                <li>Enhanced administrative support during meeting sessions</li>
+              </ul>
+              <p class="tier-ideal"><strong>Ideal for:</strong> International enterprises, attorneys, accountants, financial advisors, consulting firms, professional services</p>
+              <div class="tier-cta">
+                <a class="button" href="/#contact">Inquire</a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- ─ Why Apogee ─────────────────────────────────── -->
+      <section class="svc-why">
+        <div class="shell">
+          <div class="svc-why-header">
+            <p class="eyebrow">Why APOGEE PM</p>
+            <h2>A Space That Matches Your Standards</h2>
+          </div>
+          <div class="svc-why-grid">
+            <article class="svc-why-item">
+              <span class="icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M12 22s8-7.2 8-14A8 8 0 0 0 4 8c0 6.8 8 14 8 14Z"/><circle cx="12" cy="8" r="2.5"/></svg>
+              </span>
+              <h3>Private &amp; Exclusive</h3>
+              <p>Independent professional suites, not noisy open coworking.</p>
+            </article>
+            <article class="svc-why-item">
+              <span class="icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M3 21h18M5 21V7l7-4 7 4v14M9 21v-6h6v6M9 11h1M14 11h1"/></svg>
+              </span>
+              <h3>Executive Atmosphere</h3>
+              <p>High ceilings and large windows. Impress clients from the first step.</p>
+            </article>
+            <article class="svc-why-item">
+              <span class="icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M12 2C8 2 4 6 4 10c0 6 8 12 8 12s8-6 8-12c0-4-4-8-8-8Z"/><path d="M9 10h6M12 7v6"/></svg>
+              </span>
+              <h3>Conveniently Located</h3>
+              <p>Near Route 7, Route 28, and Dulles Airport. Free on-site parking.</p>
+            </article>
+            <article class="svc-why-item">
+              <span class="icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M4 8h16M4 4h16v16H4zM8 2v4M16 2v4"/></svg>
+              </span>
+              <h3>Flexible On-Demand</h3>
+              <p>Month-to-month. Office and meeting space by appointment.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ─ Liu Tax partnership ────────────────────────── -->
+      <section class="svc-partner">
+        <div class="shell">
+          <div class="partner-layout">
+            <div class="partner-intro">
+              <p class="eyebrow">In Partnership</p>
+              <h2>Business &amp; Tax Support</h2>
+              <p>Through our partnership with <strong>Liu Tax Group Inc.</strong>, clients can access professional tax and accounting services to support their US operations.</p>
+            </div>
+            <div class="partner-services">
+              <div class="partner-item">
+                <span class="mini-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"/><path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/></svg></span>
+                Business Tax Consulting
+              </div>
+              <div class="partner-item">
+                <span class="mini-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 4h16v16H4z"/><path d="M4 8h16M8 4v16"/></svg></span>
+                Bookkeeping Services
+              </div>
+              <div class="partner-item">
+                <span class="mini-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></span>
+                Payroll Services
+              </div>
+              <div class="partner-item">
+                <span class="mini-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 22s8-7.2 8-14A8 8 0 0 0 4 8c0 6.8 8 14 8 14Z"/><circle cx="12" cy="8" r="2.5"/></svg></span>
+                Company Registration &amp; Setup
+              </div>
+              <div class="partner-item">
+                <span class="mini-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 6h16v12H4z"/><path d="m4 7 8 6 8-6"/></svg></span>
+                IRS &amp; State Tax Notice Handling
+              </div>
+              <div class="partner-item">
+                <span class="mini-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2Z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7Z"/></svg></span>
+                Business Advisory
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ─ Important service notes ────────────────────── -->
+      <section class="svc-notes">
+        <div class="shell">
+          <h2>Important Service Notes</h2>
+          <ul class="notes-list">
+            <li>Office phone is for outbound use only. Apogee PM LLC does not answer, receive, screen, take messages for, or forward client business calls.</li>
+            <li>Mail scanning, opening, and forwarding require client authorization.</li>
+            <li>Postage, courier, shipping, and special handling fees are not included unless stated in writing.</li>
+            <li>Office and meeting room use requires advance reservation and is subject to availability.</li>
+            <li>Business address use must comply with the service agreement and applicable company registration requirements.</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- ─ CTA ────────────────────────────────────────── -->
+      <section class="svc-cta">
+        <div class="shell">
+          <h2>Ready to Get Started?</h2>
+          <p>Contact us to schedule a tour or discuss which plan fits your business.</p>
+          <div class="cta-row">
+            <a class="button button-gold" href="/#contact">Request a Consultation</a>
+            <a class="button" href="tel:+15713757170">(571) 375-7170</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ─ Location bar ───────────────────────────────── -->
+      <section class="svc-location">
+        <div class="shell">
+          <p>
+            <span class="mini-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 22s7-7.3 7-13A7 7 0 0 0 5 9c0 5.7 7 13 7 13Z"/><circle cx="12" cy="9" r="2.5"/></svg></span>
+            21165 Whitfield Pl, Suite 207, Sterling, VA 20165 &nbsp;&middot;&nbsp; Near Route 7, Route 28 &amp; Dulles Airport &nbsp;&middot;&nbsp; Free Parking
+          </p>
+        </div>
+      </section>
+
+    </main>
+
+    <footer class="footer">
+      <div class="shell footer-grid">
+        <div>
+          <a class="brand" href="/" aria-label="APOGEE PM home">
+            <img class="brand-mark" src="../assets/img/apogee-mark.svg" alt="" aria-hidden="true" width="46" height="50">
+            <span>
+              <span class="brand-word">APOGEE PM</span>
+              <span class="brand-kicker">Property Management</span>
+            </span>
+          </a>
+          <p>Professional property management and business office solutions across the DMV region.</p>
+          <div class="socials" aria-label="Social links">
+            <span>in</span><span>B</span><span>P</span>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <p class="footer-heading">Services</p>
+          <ul class="footer-list">
+            <li><a href="/services/">Virtual Office Plans</a></li>
+            <li><a href="/listings/#office">Office Space</a></li>
+            <li><a href="/listings/#townhouse">Residential Townhouse</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <p class="footer-heading">Company</p>
+          <ul class="footer-list">
+            <li><a href="/#about">About Us</a></li>
+            <li><a href="/#why">Why Apogee</a></li>
+            <li><a href="/#areas">Areas We Serve</a></li>
+            <li><a href="/#contact">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <p class="footer-heading">Contact</p>
+          <ul class="footer-list">
+            <li class="contact-line">
+              <span class="mini-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 6h16v12H4z"/><path d="m4 7 8 6 8-6"/></svg></span>
+              <a href="mailto:apogeepmva@gmail.com">apogeepmva@gmail.com</a>
+            </li>
+            <li class="contact-line">
+              <span class="mini-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.5 13 13 0 0 0 2.8.7 2 2 0 0 1 1.7 2.1Z"/></svg></span>
+              <a href="tel:+15713757170">(571) 375-7170</a>
+            </li>
+            <li class="contact-line">
+              <span class="mini-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 22s7-7.3 7-13A7 7 0 0 0 5 9c0 5.7 7 13 7 13Z"/><circle cx="12" cy="9" r="2.5"/></svg></span>
+              DMV Region
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="shell copyright">&copy; 2026 APOGEE PM LLC. All rights reserved.</div>
+    </footer>
+
+  </div>
+  <script>
+    document.querySelector('.nav-toggle').addEventListener('click', function () {
+      var nav = document.querySelector('.nav-links');
+      var open = nav.classList.toggle('is-open');
+      this.setAttribute('aria-expanded', open);
+      this.innerHTML = open
+        ? '<svg viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></svg>'
+        : '<svg viewBox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18"/></svg>';
+    });
+  </script>
+</body>
+</html>
