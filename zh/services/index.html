@@ -33,8 +33,9 @@
     }
     .svc-breadcrumb a {
       color: var(--gold-2);
-      text-decoration: none;
-      opacity: .75;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      opacity: .85;
       transition: opacity .2s;
     }
     .svc-breadcrumb a:hover { opacity: 1; }
@@ -293,6 +294,13 @@
       color: rgba(6,26,53,.65);
       line-height: 1.65;
     }
+    .partner-link {
+      color: var(--gold);
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: border-color .2s;
+    }
+    .partner-link:hover { border-color: var(--gold); }
     .partner-services {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -585,7 +593,7 @@
             <div class="partner-intro">
               <p class="eyebrow">联合呈献</p>
               <h2>额外商务与税务支持</h2>
-              <p>通过与 <strong>Liu Tax Group Inc.</strong> 的合作，客户还可获得专业的税务与会计支持，助力您的美国业务运营。</p>
+              <p>通过与 <a href="https://www.liutaxgroup.com/" target="_blank" rel="noopener" class="partner-link"><strong>Liu Tax Group Inc.</strong></a> 的合作，客户还可获得专业的税务与会计支持，助力您的美国业务运营。</p>
             </div>
             <div class="partner-services">
               <div class="partner-item">
